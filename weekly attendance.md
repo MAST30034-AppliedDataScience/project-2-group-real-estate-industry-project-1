@@ -1,6 +1,7 @@
 # Real Estate Industry Project
+### Group 1
 
-**Minutes:** 30-08-2024, *time placeholder*
+**Minutes:** 30-08-2024, 1 hour and 20 minutes
 
 **Group Members:**  
 Yuecheng Wang, 1266382
