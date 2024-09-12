@@ -4,6 +4,7 @@ import re
 import numpy as np
 import pandas as pd
 import json
+from geopy.distance import geodesic
 
 def parse_coordinate(coord_str):
     # Remove the brackets and split the string by comma
@@ -45,3 +46,18 @@ def calculate_distance_car(row, des_coords):
         return distance_meters/1000
     else:
         return -1
+
+
+def find_closest_station(property_coords, train_stations):
+    """
+    Find the closest train station based on latitude and longitude.
+    """
+    if not property_coords or property_coords == (0.0, 0.0):
+        return 0
+    property_lat, property_lon = property_coords
+    train_stations['distance'] = train_stations.apply(
+        lambda row: geodesic((property_lat, property_lon), (row['stop_lat'], row['stop_lon'])).meters, axis=1
+    )
+    # Return the closest station row
+    closest_station = train_stations.loc[train_stations['distance'].idxmin()]
+    return closest_station
