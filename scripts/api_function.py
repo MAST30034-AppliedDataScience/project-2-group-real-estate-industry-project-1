@@ -76,3 +76,18 @@ def find_closest_hospital(property_coords, hospitals):
     closest_hospital = hospitals.loc[hospitals['distance'].idxmin()]
     return closest_hospital
 
+def find_closest_park(property_coords, parks):
+    """
+    Find the closest park based on latitude and longitude.
+    """
+    if not property_coords or property_coords == (0.0, 0.0):
+        return 0
+    property_lat, property_lon = property_coords
+    parks['distance'] = parks.apply(
+        lambda row: geodesic((property_lat, property_lon), (row['latitude'], row['longitude'])).meters, axis=1
+    )
+    # Return the closest hospital row
+    closest_park = parks.loc[parks['distance'].idxmin()]
+    return closest_park
+
+
