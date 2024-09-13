@@ -90,4 +90,33 @@ def find_closest_park(property_coords, parks):
     closest_park = parks.loc[parks['distance'].idxmin()]
     return closest_park
 
+def parse_elec_coord(point_str):
+    # Use regex to extract numbers from the POINT string
+    match = re.match(r'POINT \(([^ ]+) ([^ ]+)\)', point_str)
+    if match:
+        lon = float(match.group(1))
+        lat = float(match.group(2))
+        return pd.Series([lat, lon])
+    else:
+        return pd.Series([None, None])
+        
+def find_closest_elec(property_coords, elec):
+    """
+    Find the closest elec based on latitude and longitude.
+    """
+    # as same functionality just different name, call previous
+    return find_closest_park(property_coords, elec)
 
+def find_closest_tour(property_coords, tour):
+    """
+    Find the closest tourist attraction based on latitude and longitude.
+    """
+    # Same deal
+    return find_closest_park(property_coords, tour)
+
+def find_closest_lib(property_coords, lib):
+    """
+    Find the closest tourist attraction based on latitude and longitude.
+    """
+    # Same deal
+    return find_closest_park(property_coords, lib)
