@@ -61,3 +61,18 @@ def find_closest_station(property_coords, train_stations):
     # Return the closest station row
     closest_station = train_stations.loc[train_stations['distance'].idxmin()]
     return closest_station
+
+def find_closest_hospital(property_coords, hospitals):
+    """
+    Find the closest hospital based on latitude and longitude.
+    """
+    if not property_coords or property_coords == (0.0, 0.0):
+        return 0
+    property_lat, property_lon = property_coords
+    hospitals['distance'] = hospitals.apply(
+        lambda row: geodesic((property_lat, property_lon), (row['NHSD_LAT'], row['NHSD_LONG'])).meters, axis=1
+    )
+    # Return the closest hospital row
+    closest_hospital = hospitals.loc[hospitals['distance'].idxmin()]
+    return closest_hospital
+
