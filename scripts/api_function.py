@@ -86,7 +86,7 @@ def find_closest_park(property_coords, parks):
     parks['distance'] = parks.apply(
         lambda row: geodesic((property_lat, property_lon), (row['latitude'], row['longitude'])).meters, axis=1
     )
-    # Return the closest hospital row
+    # Return the closest park row
     closest_park = parks.loc[parks['distance'].idxmin()]
     return closest_park
 
@@ -116,7 +116,21 @@ def find_closest_tour(property_coords, tour):
 
 def find_closest_lib(property_coords, lib):
     """
-    Find the closest tourist attraction based on latitude and longitude.
+    Find the closest library based on latitude and longitude.
     """
     # Same deal
     return find_closest_park(property_coords, lib)
+
+def find_closest_shop(property_coords, shops):
+    """
+    Find the closest grocery based on latitude and longitude.
+    """
+    if not property_coords or property_coords == (0.0, 0.0):
+        return 0
+    property_lat, property_lon = property_coords
+    shops['distance'] = shops.apply(
+        lambda row: geodesic((property_lat, property_lon), (row['Latitude'], row['Longitude'])).meters, axis=1
+    )
+    # Return the closest shop row
+    closest_shop = shops.loc[shops['distance'].idxmin()]
+    return closest_shop
