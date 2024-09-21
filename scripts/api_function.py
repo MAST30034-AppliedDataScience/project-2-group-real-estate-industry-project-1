@@ -6,15 +6,9 @@ import pandas as pd
 import json
 from geopy.distance import geodesic
 
-def parse_coordinate(coord_str):
-    # Remove the brackets and split the string by comma
-    coord_str = coord_str.strip('[]')
-    lat, lon = map(float, coord_str.split(','))
-    return lat, lon
-
 def calculate_distance_car(row, des_coords):
     """Calculate routing distance from property to destination using OSRM API."""
-    house_coords = parse_coordinate(row['Coordinates'])
+    house_coords = row['Latitude'], row['Longitude']
     
     # Try the OSRM route API URL
     url = (
