@@ -1,7 +1,7 @@
 # Real Estate Industry Project
 ### Group 1
 
-**Minutes:** 19-09-2024, 1 hour and 40 minutes
+**Minutes:** 25-09-2024, 1 hour and 40 minutes
 
 **Group Members:**  
 Yuecheng Wang, 1266382
@@ -11,7 +11,7 @@ Zehua HU, 1159107
 Yiting Wang, 1309191
 
 
-## Agenda for mid sem break
+## Agenda for week 10
 - **Topic 1:** re-scrape data from domain according to past data suburb (dffh.vic) and preprocess
 
 - **Topic 2:** all api calculation
@@ -32,16 +32,15 @@ Yiting Wang, 1309191
 
 
 ## Commitments
-- **Yuecheng Wang:** holiday
-- **Ran Zhang:** holiday
-- **Wanyu:** holiday
-- **Zehua:** holiday
-- **Yiting:** holiday
-
+- **Yuecheng Wang:** weekends
+- **Ran Zhang:** weekends
+- **Wanyu:** weekends
+- **Zehua:** weekends
+- **Yiting:** weekends
 
 **Signed:**  
-Yuecheng | 19-09-2024
-Ran | 19-09-2024
-Wanyu | 19-09-2024
-Zehua | 19-09-2024
-Yiting | 19-09-2024
+Yuecheng | 25-09-2024
+Ran | 25-09-2024
+Wanyu | 25-09-2024
+Zehua | 25-09-2024
+Yiting | 25-09-2024
