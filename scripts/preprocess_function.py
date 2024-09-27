@@ -1,5 +1,8 @@
 from pyspark.sql.functions import col, when, sum as spark_sum
 from pyspark.sql import functions as F
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 def print_dataset_shape(description, sdf):
     """
@@ -40,3 +43,57 @@ def check_missing_values(sdf):
             print(f" - {col_name}: {count} missing values")
 
     return missing_values_dict
+
+
+def plot_boxplots(df, feature):
+    """
+    Plots a box plot for a specified column in the DataFrame.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame containing numeric feature columns.
+    feature (str): The column that you want to observe.
+    """
+    # Set up the figure
+    plt.figure(figsize=(8, 6))
+
+    # Boxplot for the feature
+    sns.boxplot(y=df[feature])
+    plt.title(f'Boxplot of {feature}')
+
+    # Show the plot
+    plt.tight_layout()
+    plt.show()
+
+
+def outlier_remover(df, column_name):
+    """
+    Removes outliers from a specified column in the DataFrame using the IQR method with a custom multiplier for N > 100.
+
+    Parameters:
+    df (pandas.DataFrame): The DataFrame to process.
+    column_name (str): The name of the column from which to remove outliers.
+
+    Returns:
+    pandas.DataFrame: DataFrame with outliers removed.
+    """
+    # Calculate Q1 (25th percentile) and Q3 (75th percentile)
+    Q1 = df[column_name].quantile(0.25)
+    Q3 = df[column_name].quantile(0.75)
+    
+    # Calculate IQR
+    IQR = Q3 - Q1
+    
+    # Get the number of records (N)
+    N = len(df)
+    
+    # Apply the formula for N > 100
+    multiplier = np.sqrt(np.log(N) - 0.5)
+    
+    # Define the lower and upper bounds for outliers
+    lower_bound = Q1 - multiplier * IQR
+    upper_bound = Q3 + multiplier * IQR
+    
+    # Filter the DataFrame to exclude outliers
+    filtered_df = df[(df[column_name] >= lower_bound) & (df[column_name] <= upper_bound)]
+    
+    return filtered_df
