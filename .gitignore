@@ -133,5 +133,8 @@ data/curated/
 data/raw/
 data/landing/
 
+# map
+plots/
+
 # OSX .DS_Store file
 .DS_Store
