@@ -1,7 +1,7 @@
 # Real Estate Industry Project
 ### Group 1
 
-**Minutes:** 03-10-2024, 1 hour and 40 minutes
+**Minutes:** 11-10-2024, 20 minutes
 
 **Group Members:**  
 Yuecheng Wang, 1266382
@@ -12,7 +12,7 @@ Yiting Wang, 1309191
 
 
 ## Agenda for week 11
-- **Topic 1:** finish up presentation and script, reherse
+- **Topic 1:** watch other groups' presentation
 
 
 ## Project Task Allocation
@@ -24,15 +24,15 @@ Yiting Wang, 1309191
 
 
 ## Commitments
-- **Yuecheng Wang:** weekends
-- **Ran Zhang:** weekends
-- **Wanyu:** weekends
-- **Zehua:** weekends
-- **Yiting:** weekends
+- **Yuecheng Wang:** weekdays
+- **Ran Zhang:** weekdays
+- **Wanyu:** weekdays
+- **Zehua:** weekdays
+- **Yiting:** weekdays
 
 **Signed:**  
-Yuecheng | 03-10-2024
-Ran | 03-10-2024
-Wanyu | 03-10-2024
-Zehua | 03-10-2024
-Yiting | 03-10-2024
+Yuecheng | 11-10-2024
+Ran | 11-10-2024
+Wanyu | 11-10-2024
+Zehua | 11-10-2024
+Yiting | 11-10-2024
