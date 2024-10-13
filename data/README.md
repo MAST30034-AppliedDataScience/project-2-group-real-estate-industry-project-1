@@ -4,8 +4,6 @@ For this project, we gathered many dataset from internet relate to property data
 ### 1. Domain rental data
 For the domain data dataset, we first proceeded to obtain the past dataset through the website dffh.vic.gov.au `https://www.dffh.vic.gov.au/moving-annual-rent-suburb-december-quarter-2023-excel`, stored at `data/raw/domain/past_data.csv`. then manually grabbed the postcode corresponding to each suburb appearing in the past data, saved them as a json file in the path:. `/data/raw/suburb_to_postcodes.json`. After that we scraped the property information corresponding to these suburb postcodes from the website (domain.com.au) and stored it. suburb areas and store them.
 
-Scraped dataset is stored at `data/raw/domain/all_properties_combined.csv` which is immediately preprocessed to remove duplicate and negotiation price ones. Which become `data/raw/domain/all_properties_preprocessed.csv`. This dataset is also backed up in `data/manual/all_properties_combined.csv` which is default path for running repository as domain.com is updating it's properties regularly.
-
 ### 2. External dataset from ABS (Australian Bereau of Statistics)
 `https://www.abs.gov.au/` Australian Bereau of Statistics is explored for population and income data, those data change over the years so we collected as much as we can.
 ##### 2.1 Shapefiles
@@ -24,6 +22,20 @@ Other feature, mainly various facilities, and crime records for each LGA, collec
 ##### 3.2 PTV
 `https://www.ptv.vic.gov.au/` We collected PTV data and put in `/data/raw/PTV`.
 ##### 3.3 Hospital
+`https://d28rz98at9flks.cloudfront.net/149331/149331_01_0.csv` We collected hospital data  and put in `/data/raw/Hospital`
+##### 3.4 Coles_WWS
+`https://www.seibertron.com/sightings/stores/stores.php?chain_id=35&country=AU&state=101` & `https://coles.supermarketlocationmaps.com/en/aus/victoria` We collected Coles and WWS data and put in `/data/landing/Coles_WWS`
+##### 3.5 Electricity_Infrastructure
+`https://services.ga.gov.au/gis/rest/services/Foundation_Electricity_Infrastructure/MapServer/1/query?outFields=*&where=1%3D1&f=geojson` & `https://services.ga.gov.au/gis/rest/services/Foundation_Electricity_Infrastructure/MapServer/0/query?outFields=*&where=1%3D1&f=geojson` We collected transmission_substations and power_stations data and put in `/data/landing/Foundation_Electricity_Infrastructure`
+##### 3.6 Three external 
+`https://s3.ap-southeast-2.amazonaws.com/cl-isd-prd-datashare-s3-delivery/Order_9M07T0.zip` We collected library, tourist attraction and park data and put in `/data/landing/three_external`
+
+
+
+
+
+
+
 
 
 
