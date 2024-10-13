@@ -17,9 +17,9 @@ Yiting Wang, 1309191
 
 ### folder 4, 5, 7, 8 were analysis and some data processing all in `notebooks/`
 
-### `notebooks/X_aggregate_data` contain approach that we later discarded
+### `notebooks/X_aggregate_data` contain approach that we later discarded, as well as any file start with 'X'
 
-This project has been modified to run the pipeline with current data stored on `data/manual` for testing purposes, in order to run all, go to `run_all.ipynb`
-For the whole pipeline with scraping, follow instruction in `run_all.ipynb`
+### For motivation and analysis, as well as detailed approach, go to `notebooks/summary _notebook.ipynb`
 
-
+This project has been modified to run the pipeline with current data stored on `data/manual` for testing purposes, in order to rebuild the entire pipeline, some code that got commented for testing purposes need to be uncommented.
+for now, the project run all just works on same data stored on github.
